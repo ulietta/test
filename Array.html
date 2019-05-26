@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<meta charset="utf-8">
+	<title>Documents</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+window.echo = function(){
+	console.log.apply(this,arguments);
+};
+
+var arr = [3,6,0,-45,-34,2];
+
+twoArray();
+
+function twoArray(){
+	var arrPlus = [];
+	var arrMinus = [];
+	for (var i = 0;i<arr.length;i++){
+		if (arr[i] > 0){
+			arrPlus.push(arr[i])
+		} else if (arr[i] < 0){
+			arrMinus.push(arr[i]);
+		}
+	}
+	echo (arr);
+	echo ("Положительный массив: " , arrPlus);
+	echo ("Отрицательный массив: " ,arrMinus);
+
+	
+
+}
+</script>
+</body>
+</html>
+
