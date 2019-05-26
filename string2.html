@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<meta charset="utf-8">
+	<title>Documents</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+window.echo = function(){
+	console.log.apply(this,arguments);
+};
+
+var str = "fFd.jJb33   ААб SKG__ghd  ва 34f;ssU  _jj55UUvnjRR  ghлд";
+
+string();
+
+function string(){
+	if (str){
+		var determiter = ",. ;";
+		var word = '';
+		var arr = [];
+		var k = 0;
+		for (var i = 0 ; i < str.length; i++){
+			var a = str.charAt(i);
+			for (var j = 0; j <= determiter.length; j++){
+				var b = determiter.charAt(j);
+				if ( a == b ){
+					if (word != '') {
+						arr.push(word);
+						word = '';
+						j = 0;
+					}
+					break;
+				} 
+				k++;
+				if ( k == determiter.length){
+					word += str.charAt(i);
+				}
+			}
+			k = 0;
+		}
+		if (word !='') arr.push(word);
+		echo (str);
+		echo (arr);
+//без чисел первых
+		var result =[];
+			for (var a = 0; a < arr.length; a ++){
+					if (!isNaN(arr[a][0]))	continue;
+					result.push(arr[a]);
+			}
+		echo (result);
+//без кириллицы
+	var regexp = /\w/;
+	var all =[];
+	for (var r=0;r<result.length; r++){
+		var k = 0;
+		for (var s = 0; s < result[r].length; s++){
+			if (result[r][s].charCodeAt(0) >= 1040 && result[r][s].charCodeAt(0) <= 1103){
+				break;	
+			}
+			k++;
+		}
+		if (result[r].length === k){
+			all.push(result[r]);
+		}
+	}
+	echo (all);
+
+
+	} else alert ("Вы ничего не ввели");
+}
+</script>
+</body>
+</html>
+
